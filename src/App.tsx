@@ -534,11 +534,19 @@ function App() {
               <h3 className="section-title">Leadership & Activities</h3>
             </div>
 
-            <div className="max-w-xl rounded-[1.8rem] border border-[#D4AF37]/20 bg-[linear-gradient(135deg,_rgba(15,23,42,0.95),_rgba(17,24,39,0.88))] p-6 shadow-[0_20px_50px_rgba(15,23,42,0.5)]">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#E5C76B]">Leadership</p>
-              <h4 className="mt-3 text-2xl font-semibold text-white">Senior Prefect</h4>
-              <p className="mt-2 text-slate-300">Holy Cross College, Gampaha</p>
-              <p className="mt-3 text-sm text-slate-400">2019 – 2022</p>
+            <div className="max-w-xl space-y-6 rounded-[1.8rem] border border-[#D4AF37]/20 bg-[linear-gradient(135deg,_rgba(15,23,42,0.95),_rgba(17,24,39,0.88))] p-6 shadow-[0_20px_50px_rgba(15,23,42,0.5)]">
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#E5C76B]">Leadership</p>
+                <h4 className="mt-3 text-2xl font-semibold text-white">Senior Prefect</h4>
+                <p className="mt-2 text-slate-300">Holy Cross College, Gampaha</p>
+                <p className="mt-3 text-sm text-slate-400">2019 – 2022</p>
+              </div>
+
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#E5C76B]">Award</p>
+                <h4 className="mt-3 text-2xl font-semibold text-white">President Girl Guide</h4>
+                <p className="mt-3 text-sm text-slate-400">2022</p>
+              </div>
             </div>
           </div>
         </section>
@@ -619,108 +627,6 @@ function App() {
                     ))}
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-slate-900/50 py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-10">
-              <span className="section-kicker">Professional Timeline</span>
-              <h3 className="section-title">Professional Timeline</h3>
-            </div>
-
-            <div className="timeline-horizontal">
-              <div className="timeline-node">
-                <span className="year-tag">18 Aug 2025</span>
-                <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm uppercase tracking-[0.18em] text-[#E5C76B]">National Arbiter</p>
-                  <p className="mt-2 text-white">Licensed as a National Arbiter</p>
-                </div>
-              </div>
-              <div className="timeline-node">
-                <span className="year-tag">2022</span>
-                <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm uppercase tracking-[0.18em] text-[#E5C76B]">GCE Advanced Level</p>
-                  <p className="mt-2 text-white">Mathematics Stream</p>
-                </div>
-              </div>
-              <div className="timeline-node">
-                <span className="year-tag">2023</span>
-                <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm uppercase tracking-[0.18em] text-[#E5C76B]">Education</p>
-                  <p className="mt-2 text-white">Started BSc (Hons) Information Technology</p>
-                </div>
-              </div>
-              <div className="timeline-node">
-                <span className="year-tag">2024</span>
-                <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm uppercase tracking-[0.18em] text-[#E5C76B]">National Youth Event</p>
-                  <p className="mt-2 text-white">Sri Lanka National Youth Chess Championship</p>
-                </div>
-              </div>
-              <div className="timeline-node">
-                <span className="year-tag">2025</span>
-                <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm uppercase tracking-[0.18em] text-[#E5C76B]">National & International</p>
-                  <p className="mt-2 text-white">Multiple national and international-rated chess events</p>
-                </div>
-              </div>
-              <div className="timeline-node">
-                <span className="year-tag">2026</span>
-                <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm uppercase tracking-[0.18em] text-[#E5C76B]">Current Work</p>
-                  <p className="mt-2 text-white">National and international-rated chess events</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <span className="section-kicker">Explore My Chess Experience</span>
-            <h3 className="section-title">Explore My Chess Experience</h3>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-            <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
-              <label className="block">
-                <span className="sr-only">Search tournaments</span>
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Search tournaments..."
-                  className="w-full rounded-full border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-[#D4AF37]/50 focus:outline-none"
-                />
-              </label>
-
-              <select
-                value={selectedYear}
-                onChange={(e) => setSelectedYear(e.target.value)}
-                className="rounded-full border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-white focus:border-[#D4AF37]/50 focus:outline-none"
-              >
-                <option value="All">All Years</option>
-                {yearOptions.filter((year) => year !== 'All').map((year) => (
-                  <option key={year} value={year}>{year}</option>
-                ))}
-              </select>
-
-              <select
-                value={selectedTag}
-                onChange={(e) => setSelectedTag(e.target.value)}
-                className="rounded-full border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-white focus:border-[#D4AF37]/50 focus:outline-none"
-              >
-                <option value="All">All Types</option>
-                {tagOptions.filter((tag) => tag !== 'All').map((tag) => (
-                  <option key={tag} value={tag}>{tag}</option>
-                ))}
-              </select>
-
-              <div className="flex items-center justify-center rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-3 text-sm text-[#E5C76B]">
-                Showing {filteredEvents.length} events
               </div>
             </div>
           </div>
