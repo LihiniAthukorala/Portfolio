@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import portraitImage from './assets/portrait.png';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -20,7 +21,6 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'FIDE Profile', href: '#fide-profile' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Tournaments', href: '#tournaments' },
   { label: 'Credentials', href: '#credentials' },
   { label: 'Skills', href: '#skills' },
@@ -307,11 +307,13 @@ function App() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-[2rem] border border-[#D4AF37]/20 bg-[linear-gradient(135deg,_rgba(15,23,42,0.95),_rgba(17,24,39,0.9))] p-6 shadow-[0_30px_80px_rgba(15,23,42,0.9)]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.12),_transparent_30%)]" />
-                <div className="relative flex h-[420px] items-center justify-center rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,_rgba(148,163,184,0.06),_rgba(15,23,42,0.92))]">
+                <div className="relative flex h-[420px] items-center justify-center overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,_rgba(148,163,184,0.06),_rgba(15,23,42,0.92))]">
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:28px_28px]" />
-                  <div className="relative flex h-64 w-64 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-slate-950/80 shadow-[0_0_60px_rgba(212,175,55,0.18)]">
-                    <div className="text-[8rem] text-[#E5C76B]">♞</div>
-                  </div>
+                  <img
+                    src={portraitImage}
+                    alt="Portrait of Lihini Athukorala"
+                    className="relative h-full w-full object-cover object-center"
+                  />
                 </div>
               </div>
             </div>
