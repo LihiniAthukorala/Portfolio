@@ -1,0 +1,233 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: Inter, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f8fafc;
+  background: #0b1220;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+html {
+  background: #0b1220;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(212, 175, 55, 0.09), transparent 25%),
+    linear-gradient(180deg, #0b1220 0%, #111827 100%);
+  color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  transition: all 0.2s ease;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+  color: white;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatGlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.18);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: 0 0 38px rgba(212, 175, 55, 0.26);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #e5c76b;
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #f8fafc;
+}
+
+.board-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+}
+
+.timeline-grid {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  padding-left: 1rem;
+}
+
+.timeline-grid::before {
+  content: '';
+  position: absolute;
+  left: 0.45rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.8), rgba(212, 175, 55, 0.2));
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -0.1rem;
+  top: 0.8rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #e5c76b, #d4af37);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
+}
+
+.timeline-content {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.25rem;
+}
+
+.timeline-horizontal {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(6, minmax(180px, 1fr));
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.timeline-horizontal::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.2rem;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.8), rgba(212, 175, 55, 0.15));
+}
+
+.timeline-node {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.timeline-node::before {
+  content: '';
+  position: absolute;
+  top: 1.8rem;
+  left: 50%;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 9999px;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #e5c76b, #d4af37);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
+}
+
+.year-tag {
+  display: inline-flex;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.08);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #e5c76b;
+}
+
+@media (max-width: 1024px) {
+  .timeline-horizontal {
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-horizontal::before {
+    display: none;
+  }
+
+  .timeline-node::before {
+    left: 1.2rem;
+    transform: none;
+  }
+
+  .year-tag {
+    margin-left: 0;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
