@@ -401,11 +401,8 @@ function App() {
 
                 return (
                   <div key={year} className="rounded-[2rem] border border-white/10 bg-slate-950/40 p-6">
-                    <div className="mb-6 flex items-center justify-between gap-3">
+                    <div className="mb-6">
                       <h4 className="text-2xl font-semibold text-white">{year}</h4>
-                      <span className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-[#E5C76B]">
-                        {yearEvents.length} events
-                      </span>
                     </div>
 
                     <div className="space-y-5">
