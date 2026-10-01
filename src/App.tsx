@@ -67,9 +67,6 @@ function App() {
   const [selectedYear, setSelectedYear] = useState('All');
   const [selectedTag, setSelectedTag] = useState('All');
 
-  const allEventCount = tournaments.length;
-  const eventStat = allEventCount >= 10 ? `${allEventCount}+` : `${allEventCount}`;
-
   const filteredEvents = useMemo(() => {
     const query = searchTerm.trim().toLowerCase();
 
@@ -236,12 +233,11 @@ function App() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <section className="mx-auto max-w-7xl px-4 pb-6 pt-8 sm:px-6 sm:pt-10 lg:px-8">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             <StatCard label="FIDE ID" value={FIDE_ID} />
             <StatCard label="Arbiter Title" value="National Arbiter" />
             <StatCard label="Licensed" value="18 August 2025" />
-            <StatCard label="Events Officiated" value={eventStat} />
           </div>
         </section>
 
