@@ -12,7 +12,7 @@ export type Tournament = {
   date?: string;
 };
 
-export const FIDE_PROFILE_URL = '';
+export const FIDE_PROFILE_URL = 'https://ratings.fide.com/profile/9957723';
 export const FIDE_ID = '9957723';
 
 export const tournaments: Tournament[] = [

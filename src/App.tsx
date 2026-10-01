@@ -291,6 +291,16 @@ function App() {
                     <p className="mt-2 text-lg font-semibold text-white">Senior Prefect — Holy Cross College</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#E5C76B]">
+                    <Trophy className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.2em] text-[#E5C76B]">Award</p>
+                    <p className="mt-2 text-lg font-semibold text-white">Awarded as President Girl Guide — 2022</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -354,24 +364,6 @@ function App() {
                 </a>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section id="experience" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <span className="section-kicker">FIDE & Tournament Experience</span>
-              <h3 className="section-title">FIDE & Tournament Experience</h3>
-            </div>
-            <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-300">
-              {filteredEvents.length} events shown
-            </div>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
           </div>
         </section>
 
