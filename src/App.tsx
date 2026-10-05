@@ -343,28 +343,29 @@ function App() {
               <h3 className="section-title">My FIDE Profile</h3>
             </div>
 
-            <div className="grid gap-8 border-t border-white/10 pt-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-12">
+            <div className="grid gap-8 border-t border-white/10 pt-7 lg:grid-cols-[minmax(10rem,0.7fr)_minmax(0,1.3fr)_auto] lg:items-center lg:gap-10">
+              <dl className="border-l-2 border-[#D4AF37] py-1 pl-5">
+                <dt className="text-[10px] uppercase tracking-[0.18em] text-slate-400">FIDE ID</dt>
+                <dd className="mt-2 text-3xl font-bold tabular-nums text-[#E5C76B] sm:text-4xl">{FIDE_ID}</dd>
+              </dl>
+
               <div>
                 <p className="text-2xl font-bold text-white sm:text-3xl">Lihini Athukorala</p>
-                <dl className="mt-7 grid gap-x-8 sm:grid-cols-3">
-                  <div className="border-t border-white/10 py-4">
-                    <dt className="text-[10px] uppercase tracking-[0.18em] text-slate-400">FIDE ID</dt>
-                    <dd className="mt-2 text-lg font-semibold tabular-nums text-white">{FIDE_ID}</dd>
-                  </div>
-                  <div className="border-t border-white/10 py-4">
+                <dl className="mt-5 grid grid-cols-2 gap-x-6 sm:max-w-md">
+                  <div className="border-t border-white/10 pt-3">
                     <dt className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Federation</dt>
-                    <dd className="mt-2 text-lg font-semibold text-white">Sri Lanka</dd>
+                    <dd className="mt-1 text-sm font-semibold text-white sm:text-base">Sri Lanka</dd>
                   </div>
-                  <div className="border-t border-white/10 py-4">
+                  <div className="border-t border-white/10 pt-3">
                     <dt className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Title</dt>
-                    <dd className="mt-2 text-lg font-semibold text-white">National Arbiter</dd>
+                    <dd className="mt-1 text-sm font-semibold text-white sm:text-base">National Arbiter</dd>
                   </div>
                 </dl>
               </div>
 
               <a
                 href={FIDE_PROFILE_URL || undefined}
-                className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#E5C76B]"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#E5C76B] sm:w-fit"
                 aria-label="Open official FIDE profile"
               >
                 View FIDE Profile
