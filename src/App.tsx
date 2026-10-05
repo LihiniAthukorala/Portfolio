@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import portraitImage from './assets/portrait.png';
 import {
   ArrowRight,
@@ -7,6 +7,8 @@ import {
   Check,
   ChevronRight,
   Clock3,
+  Download,
+  Eye,
   GraduationCap,
   MapPin,
   Menu,
@@ -66,6 +68,12 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedYear, setSelectedYear] = useState('All');
   const [selectedTag, setSelectedTag] = useState('All');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsLoading(false), 1500);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const filteredEvents = useMemo(() => {
     const query = searchTerm.trim().toLowerCase();
@@ -95,7 +103,22 @@ function App() {
   const yearGroups = Array.from(new Set(tournaments.map((event) => event.year))).sort((a, b) => b - a);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
+    <>
+      {isLoading ? (
+        <div className="loading-screen" aria-live="polite" aria-busy="true">
+          <div className="loading-logo" role="status" aria-label="Loading portfolio">
+            <div className="loading-orbit loading-orbit--one" />
+            <div className="loading-orbit loading-orbit--two" />
+            <div className="loading-core">
+              <span className="loading-king">♔</span>
+            </div>
+            <span className="loading-dot loading-dot--one" />
+            <span className="loading-dot loading-dot--two" />
+            <span className="loading-dot loading-dot--three" />
+          </div>
+        </div>
+      ) : (
+        <div className="min-h-screen bg-slate-950 text-slate-50">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="#home" className="flex items-center gap-3" aria-label="Lihini Athukorala home">
@@ -192,6 +215,28 @@ function App() {
                 >
                   View Tournament Experience
                   <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="mt-5 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="/Lihini-Athukorala-CV.pdf"
+                  download
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D4AF37] px-6 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-[#E5C76B]"
+                  aria-label="Download my CV"
+                >
+                  <Download className="h-4 w-4" />
+                  Download My CV
+                </a>
+                <a
+                  href="/Lihini-Athukorala-CV.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-[#D4AF37]/60 hover:text-[#E5C76B]"
+                  aria-label="View my CV"
+                >
+                  <Eye className="h-4 w-4" />
+                  View My CV
                 </a>
               </div>
 
@@ -705,6 +750,8 @@ function App() {
         </div>
       </footer>
     </div>
+      )}
+    </>
   );
 }
 
