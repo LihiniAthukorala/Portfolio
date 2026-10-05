@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import portraitImage from './assets/portrait.png';
+import cvPdf from './assets/Lihini Athukorala.pdf';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -178,32 +179,41 @@ function App() {
       </header>
 
       <main id="home" className="overflow-x-hidden">
-        <section className="relative isolate mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.12),_transparent_25%),linear-gradient(135deg,_rgba(15,23,42,0.8),_rgba(15,23,42,0.95))]" />
-          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="animate-fade-in-up">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#E5C76B]">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                National Arbiter
+        <section className="relative isolate mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-14">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_18%_30%,_rgba(212,175,55,0.10),_transparent_42%),linear-gradient(135deg,_rgba(15,23,42,0.35),_rgba(11,18,32,0.9))]" />
+          <div className="grid items-center gap-8 md:grid-cols-[1.05fr_0.85fr] md:gap-12 lg:grid-cols-[1.05fr_0.85fr] lg:gap-20">
+            <div className="animate-fade-in-up max-w-2xl">
+              <div className="inline-flex items-center gap-2 border-l-2 border-[#D4AF37] bg-white/[0.04] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E5C76B]">
+                <ShieldCheck className="h-4 w-4" />
+                National Arbiter <span className="text-slate-500">/</span> Sri Lanka
               </div>
 
-              <h1 className="max-w-xl text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-                Lihini Athukorala
-              </h1>
+              <div className="mt-5 grid grid-cols-[minmax(0,1fr)_6rem] items-center gap-4 sm:mt-0 sm:block">
+                <h1 className="text-3xl font-black leading-[1.02] text-white sm:mt-7 sm:text-6xl sm:leading-[0.98] lg:text-7xl">
+                  Lihini <span className="block text-[#E5C76B]">Athukorala</span>
+                </h1>
+                <div className="md:hidden">
+                  <img
+                    src={portraitImage}
+                    alt="Lihini Athukorala"
+                    className="aspect-[4/5] w-full object-cover object-[center_20%]"
+                  />
+                </div>
+              </div>
 
-              <h2 className="mt-4 text-2xl font-medium text-slate-200 sm:text-3xl">
-                Chess Arbiter • Tournament Official • IT Professional
+              <h2 className="mt-4 max-w-xl text-lg font-medium leading-snug text-slate-200 sm:mt-6 sm:text-2xl">
+                Chess Arbiter <span className="text-[#D4AF37]">/</span> Tournament Official <span className="text-[#D4AF37]">/</span> IT Professional
               </h2>
 
-              <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
+              <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300 sm:mt-5 sm:text-lg sm:leading-8">
                 National Arbiter with experience officiating at national and international-rated chess events.
                 Committed to fair play, accurate tournament administration, and maintaining a professional and organized playing environment.
               </p>
 
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
                 <a
                   href={FIDE_PROFILE_URL || undefined}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D4AF37] px-6 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-[#E5C76B]"
+                  className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-[#E5C76B] sm:py-3"
                   aria-label="View FIDE profile"
                 >
                   View FIDE Profile
@@ -211,70 +221,58 @@ function App() {
                 </a>
                 <a
                   href="#experience"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-[#D4AF37]/60 hover:text-[#E5C76B]"
+                  className="inline-flex items-center justify-center gap-2 border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-[#D4AF37]/70 hover:text-[#E5C76B] sm:py-3"
                 >
                   View Tournament Experience
                   <ChevronRight className="h-4 w-4" />
                 </a>
               </div>
 
-              <div className="mt-5 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-4 sm:mt-7 sm:pt-5">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Curriculum Vitae</span>
                 <a
-                  href="/Lihini-Athukorala-CV.pdf"
-                  download
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D4AF37] px-6 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-[#E5C76B]"
+                  href={cvPdf}
+                  download="Lihini Athukorala.pdf"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-slate-200 transition hover:text-[#E5C76B]"
                   aria-label="Download my CV"
                 >
                   <Download className="h-4 w-4" />
                   Download My CV
                 </a>
                 <a
-                  href="/Lihini-Athukorala-CV.pdf"
+                  href={cvPdf}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-[#D4AF37]/60 hover:text-[#E5C76B]"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-slate-200 transition hover:text-[#E5C76B]"
                   aria-label="View my CV"
                 >
                   <Eye className="h-4 w-4" />
                   View My CV
                 </a>
               </div>
-
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs uppercase tracking-[0.18em] text-slate-300">
-                <span>FIDE ID: {FIDE_ID}</span>
-                <span className="hidden sm:inline text-slate-500">•</span>
-                <span>National Arbiter</span>
-                <span className="hidden sm:inline text-slate-500">•</span>
-                <span>Sri Lanka</span>
-              </div>
             </div>
 
-            <div className="relative animate-fade-in-up">
-              <div className="absolute inset-6 -z-10 rounded-[2rem] bg-[#D4AF37]/10 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-[#D4AF37]/25 bg-[linear-gradient(135deg,_rgba(17,24,39,0.95),_rgba(11,18,32,0.92))] p-6 shadow-[0_30px_80px_rgba(15,23,42,0.7)]">
-                <div className="board-grid absolute inset-0 opacity-40" />
-                <div className="relative flex items-center justify-center rounded-[1.5rem] border border-white/10 bg-slate-900/80 p-6 sm:p-10">
-                  <div className="relative flex h-72 w-full max-w-md items-center justify-center overflow-hidden rounded-[1.25rem] border border-[#D4AF37]/20 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.14),_rgba(15,23,42,0.96)_55%)]">
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:30px_30px] opacity-75" />
-                    <div className="relative flex h-44 w-44 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-[#0B1220]/80 shadow-[0_0_50px_rgba(212,175,55,0.25)]">
-                      <div className="text-7xl text-[#E5C76B] drop-shadow-[0_0_18px_rgba(212,175,55,0.5)]">♞</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative mt-6 rounded-2xl border border-[#D4AF37]/20 bg-slate-900/80 p-4 shadow-xl">
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E5C76B]">National Arbiter</div>
-                      <div className="mt-2 text-sm text-slate-200">Licensed: 18 August 2025</div>
-                    </div>
-                    <div className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-[#E5C76B]">
-                      FIDE ID: {FIDE_ID}
-                    </div>
+            <figure className="animate-fade-in-up relative mx-auto hidden w-full max-w-[27rem] md:block lg:ml-auto">
+              <div className="pointer-events-none absolute -inset-3 border border-[#D4AF37]/25" />
+              <div className="relative overflow-hidden border border-white/10 bg-[#10254A]">
+                <img
+                  src={portraitImage}
+                  alt="Lihini Athukorala, National Chess Arbiter"
+                  className="aspect-[4/5] w-full object-cover object-[center_20%]"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-6">
+                  <figcaption>
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E5C76B]">Licensed 18 August 2025</div>
+                    <div className="mt-2 text-lg font-semibold text-white">National Chess Arbiter</div>
+                  </figcaption>
+                  <div className="shrink-0 border-l border-[#E5C76B]/70 pl-4 text-right">
+                    <div className="text-[10px] uppercase tracking-[0.16em] text-slate-300">FIDE ID</div>
+                    <div className="mt-1 text-sm font-semibold text-white">{FIDE_ID}</div>
                   </div>
                 </div>
               </div>
-            </div>
+            </figure>
           </div>
         </section>
 
