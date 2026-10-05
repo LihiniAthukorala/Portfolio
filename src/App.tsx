@@ -248,7 +248,7 @@ function App() {
             </div>
 
             <figure className="animate-fade-in-up relative mx-auto hidden w-full max-w-[27rem] md:block lg:ml-auto">
-              <div className="pointer-events-none absolute -inset-3 border border-[#D4AF37]/25" />
+              <div className="neon-frame pointer-events-none absolute -inset-3 border" />
               <div className="relative overflow-hidden border border-white/10 bg-[#10254A]">
                 <img
                   src={portraitImage}
