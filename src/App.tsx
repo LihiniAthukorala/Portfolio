@@ -215,7 +215,7 @@ function App() {
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="#experience"
+                  href="#tournaments"
                   className="inline-flex items-center justify-center gap-2 border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-[#D4AF37]/70 hover:text-[#E5C76B] sm:py-3"
                 >
                   View Tournament Experience
