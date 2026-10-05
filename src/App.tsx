@@ -284,76 +284,60 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <span className="section-kicker">About Me</span>
+        <section id="about" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mb-8">
+            <span className="section-kicker">Profile</span>
             <h3 className="section-title">About Me</h3>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="space-y-6 text-slate-300">
-              <p>
-                National Arbiter licensed since 18 August 2025, with experience officiating at national and international-rated chess events.
-                Responsible, detail-oriented, and committed to conducting chess tournaments fairly and professionally while maintaining an organized playing environment.
-              </p>
-              <p>
-                Currently pursuing a BSc (Hons) degree in Information Technology, with strong analytical, organizational, communication, problem-solving, and digital skills.
-              </p>
+          <div className="grid gap-6 text-base leading-8 text-slate-300 lg:grid-cols-2 lg:gap-14">
+            <p>
+              National Arbiter licensed since 18 August 2025, with experience officiating at national and international-rated chess events.
+              Responsible, detail-oriented, and committed to conducting chess tournaments fairly and professionally while maintaining an organized playing environment.
+            </p>
+            <p>
+              Currently pursuing a BSc (Hons) degree in Information Technology, with strong analytical, organizational, communication, problem-solving, and digital skills.
+            </p>
+          </div>
 
-              <div className="mt-8 space-y-5 rounded-3xl border border-white/10 bg-white/5 p-6">
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#E5C76B]">
-                    <Swords className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-[#E5C76B]">Chess Arbitration</p>
-                    <p className="mt-2 text-lg font-semibold text-white">National Arbiter</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#E5C76B]">
-                    <GraduationCap className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-[#E5C76B]">Education</p>
-                    <p className="mt-2 text-lg font-semibold text-white">BSc (Hons) Information Technology</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#E5C76B]">
-                    <Trophy className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-[#E5C76B]">Leadership</p>
-                    <p className="mt-2 text-lg font-semibold text-white">Senior Prefect — Holy Cross College</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#E5C76B]">
-                    <Trophy className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-[#E5C76B]">Award</p>
-                    <p className="mt-2 text-lg font-semibold text-white">Awarded as President Girl Guide — 2022</p>
-                  </div>
-                </div>
+          <div className="mt-10 grid gap-x-12 sm:grid-cols-2">
+            <div className="flex items-start gap-4 border-t border-white/10 py-5">
+              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center border border-[#D4AF37]/35 bg-[#D4AF37]/[0.06] text-[#E5C76B]">
+                <Swords className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B]">Chess Arbitration</p>
+                <p className="mt-2 text-lg font-semibold text-white">National Arbiter</p>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-[2rem] border border-[#D4AF37]/20 bg-[linear-gradient(135deg,_rgba(15,23,42,0.95),_rgba(17,24,39,0.9))] p-6 shadow-[0_30px_80px_rgba(15,23,42,0.9)]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.12),_transparent_30%)]" />
-                <div className="relative flex h-[420px] items-center justify-center overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,_rgba(148,163,184,0.06),_rgba(15,23,42,0.92))]">
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:28px_28px]" />
-                  <img
-                    src={portraitImage}
-                    alt="Portrait of Lihini Athukorala"
-                    className="relative h-full w-full object-cover object-center"
-                  />
-                </div>
+            <div className="flex items-start gap-4 border-t border-white/10 py-5">
+              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center border border-[#D4AF37]/35 bg-[#D4AF37]/[0.06] text-[#E5C76B]">
+                <GraduationCap className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B]">Education</p>
+                <p className="mt-2 text-lg font-semibold text-white">BSc (Hons) Information Technology</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 border-t border-white/10 py-5">
+              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center border border-[#D4AF37]/35 bg-[#D4AF37]/[0.06] text-[#E5C76B]">
+                <Trophy className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B]">Leadership</p>
+                <p className="mt-2 text-lg font-semibold text-white">Senior Prefect — Holy Cross College</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 border-t border-white/10 py-5">
+              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center border border-[#D4AF37]/35 bg-[#D4AF37]/[0.06] text-[#E5C76B]">
+                <Trophy className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B]">Award</p>
+                <p className="mt-2 text-lg font-semibold text-white">Awarded as President Girl Guide — 2022</p>
               </div>
             </div>
           </div>
