@@ -115,7 +115,7 @@ function App() {
         </div>
       ) : (
         <div className="min-h-screen bg-slate-950 text-slate-50">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 shadow-[0_12px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="#home" className="flex items-center gap-3" aria-label="Lihini Athukorala home">
             <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-lg text-[#E5C76B] shadow-[0_0_30px_rgba(212,175,55,0.2)]">
@@ -129,7 +129,7 @@ function App() {
 
           <div className="hidden items-center gap-8 lg:flex">
             {navItems.map((item) => (
-              <a key={item.label} href={item.href} className="text-sm text-slate-300 transition hover:text-[#E5C76B]">
+              <a key={item.label} href={item.href} className="border-b border-transparent py-2 text-sm text-slate-300 transition hover:border-[#E5C76B] hover:text-white">
                 {item.label}
               </a>
             ))}
@@ -150,13 +150,14 @@ function App() {
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-100 lg:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </nav>
 
-        {menuOpen && (
-          <div className="border-t border-white/10 bg-slate-950/95 px-4 py-4 lg:hidden">
+        <div id="mobile-navigation" className={`${menuOpen ? 'block' : 'hidden'} border-t border-white/10 bg-slate-950/95 px-4 py-4 lg:hidden`}>
             <div className="flex flex-col gap-3">
               {navItems.map((item) => (
                 <a
@@ -169,8 +170,7 @@ function App() {
                 </a>
               ))}
             </div>
-          </div>
-        )}
+        </div>
       </header>
 
       <main id="home" className="overflow-x-hidden">
@@ -380,16 +380,17 @@ function App() {
               <h3 className="section-title">Tournament Experience</h3>
             </div>
 
-            <div className="mb-8 flex flex-wrap gap-3">
+            <div className="mb-8 inline-flex flex-wrap gap-1 border border-white/10 bg-white/[0.03] p-1">
               {yearOptions.map((year) => (
                 <button
                   key={year}
                   type="button"
                   onClick={() => setSelectedYear(year)}
-                  className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                  aria-pressed={selectedYear === year}
+                  className={`min-h-10 px-4 py-2 text-sm font-medium transition ${
                     selectedYear === year
-                      ? 'border-[#D4AF37] bg-[#D4AF37]/15 text-[#E5C76B]'
-                      : 'border-white/10 bg-white/5 text-slate-300 hover:border-[#D4AF37]/40 hover:text-[#E5C76B]'
+                      ? 'bg-[#D4AF37] text-slate-950'
+                      : 'text-slate-300 hover:bg-white/5 hover:text-white'
                   }`}
                 >
                   {year}
@@ -397,7 +398,7 @@ function App() {
               ))}
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="grid gap-x-14 lg:grid-cols-2">
               {yearGroups.map((year) => {
                 const yearEvents = tournaments.filter((event) => event.year === year);
 
@@ -406,26 +407,23 @@ function App() {
                 }
 
                 return (
-                  <div key={year} className="rounded-[2rem] border border-white/10 bg-slate-950/40 p-6">
-                    <div className="mb-6">
+                  <div key={year} className="border-t border-white/15 pt-5">
+                    <div className="mb-2 flex items-baseline justify-between gap-4">
                       <h4 className="text-2xl font-semibold text-white">{year}</h4>
+                      <span className="text-xs uppercase tracking-[0.14em] text-slate-500">
+                        {yearEvents.length} {yearEvents.length === 1 ? 'event' : 'events'}
+                      </span>
                     </div>
 
-                    <div className="space-y-5">
+                    <div className="divide-y divide-white/10">
                       {yearEvents.map((event) => (
-                        <div key={event.id} className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                          <div className="absolute left-0 top-0 h-full w-0.5 bg-[#D4AF37]" />
-                          <div className="pl-4">
-                            <div className="flex flex-wrap items-center justify-between gap-3">
-                              <h5 className="text-lg font-semibold text-white">{event.name}</h5>
-                            </div>
-                            <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-300">
-                              <span>{event.type}</span>
-                              <span className="text-slate-500">•</span>
-                              <span>{event.year}</span>
-                            </div>
+                        <article key={event.id} className="flex gap-4 py-5">
+                          <span className="mt-2 h-2 w-2 shrink-0 bg-[#E5C76B]" aria-hidden="true" />
+                          <div className="min-w-0">
+                            <h5 className="text-base font-semibold leading-snug text-white sm:text-lg">{event.name}</h5>
+                            <p className="mt-2 text-sm text-slate-400">{event.type}</p>
                           </div>
-                        </div>
+                        </article>
                       ))}
                     </div>
                   </div>

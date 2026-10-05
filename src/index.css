@@ -43,7 +43,14 @@ select {
 
 button,
 a {
-  transition: all 0.2s ease;
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+:where(a, button, input, select):focus-visible {
+  outline: 2px solid #e5c76b;
+  outline-offset: 4px;
 }
 
 ::selection {
@@ -231,10 +238,37 @@ a {
 
 .section-title {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 2rem;
+  line-height: 1.08;
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   color: #f8fafc;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .board-grid {
