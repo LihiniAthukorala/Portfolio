@@ -461,7 +461,7 @@ function App() {
               <h3 className="section-title">Credentials & Qualifications</h3>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 xl:grid-cols-4">
               <CredentialCard title="National Arbiter" detail="Licensed: 18 August 2025" meta="FIDE ID: 9957723" />
               <CredentialCard title="BSc (Hons) Information Technology" detail="Sri Lanka Institute of Information Technology" meta="2023 – Present" />
               <CredentialCard title="Diploma in Information Technology" detail="ESoft Metro Campus, Gampaha" meta="2023 – 2024" />
@@ -766,14 +766,11 @@ type CredentialCardProps = {
 
 function CredentialCard({ title, detail, meta }: CredentialCardProps) {
   return (
-    <div className="rounded-[1.6rem] border border-[#D4AF37]/20 bg-[linear-gradient(135deg,_rgba(15,23,42,0.92),_rgba(17,24,39,0.8))] p-5 shadow-[0_18px_40px_rgba(15,23,42,0.45)]">
-      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 text-[#E5C76B]">
-        <ShieldCheck className="h-4 w-4" />
-      </div>
-      <h4 className="mt-5 text-xl font-semibold text-white">{title}</h4>
-      <p className="mt-3 text-slate-300">{detail}</p>
-      <p className="mt-2 text-sm text-[#E5C76B]">{meta}</p>
-    </div>
+    <article className="border-t border-[#D4AF37]/35 pt-5">
+      <h4 className="text-lg font-semibold leading-snug text-white">{title}</h4>
+      <p className="mt-3 text-sm leading-6 text-slate-300">{detail}</p>
+      <p className="mt-2 text-sm font-medium text-[#E5C76B]">{meta}</p>
+    </article>
   );
 }
 
