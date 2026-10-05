@@ -343,44 +343,33 @@ function App() {
               <h3 className="section-title">My FIDE Profile</h3>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div className="rounded-[2rem] border border-[#D4AF37]/25 bg-[linear-gradient(135deg,_rgba(15,23,42,0.95),_rgba(17,24,39,0.88))] p-8 shadow-[0_20px_60px_rgba(15,23,42,0.7)]">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <div className="text-[11px] uppercase tracking-[0.28em] text-[#E5C76B]">FIDE ID</div>
-                    <p className="mt-4 text-2xl font-bold text-white sm:text-3xl">Lihini Athukorala</p>
+            <div className="grid gap-8 border-t border-white/10 pt-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-12">
+              <div>
+                <p className="text-2xl font-bold text-white sm:text-3xl">Lihini Athukorala</p>
+                <dl className="mt-7 grid gap-x-8 sm:grid-cols-3">
+                  <div className="border-t border-white/10 py-4">
+                    <dt className="text-[10px] uppercase tracking-[0.18em] text-slate-400">FIDE ID</dt>
+                    <dd className="mt-2 text-lg font-semibold tabular-nums text-white">{FIDE_ID}</dd>
                   </div>
-                  <div className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-[#E5C76B]">
-                    National Arbiter
+                  <div className="border-t border-white/10 py-4">
+                    <dt className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Federation</dt>
+                    <dd className="mt-2 text-lg font-semibold text-white">Sri Lanka</dd>
                   </div>
-                </div>
-
-                <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400">FIDE ID</div>
-                    <div className="mt-2 text-lg font-semibold text-white">{FIDE_ID}</div>
+                  <div className="border-t border-white/10 py-4">
+                    <dt className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Title</dt>
+                    <dd className="mt-2 text-lg font-semibold text-white">National Arbiter</dd>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400">Federation</div>
-                    <div className="mt-2 text-lg font-semibold text-white">Sri Lanka</div>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400">Title</div>
-                    <div className="mt-2 text-lg font-semibold text-white">National Arbiter</div>
-                  </div>
-                </div>
+                </dl>
               </div>
 
-              <div className="flex justify-center lg:justify-end">
-                <a
-                  href={FIDE_PROFILE_URL || undefined}
-                  className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 px-6 py-3 text-sm font-semibold text-[#E5C76B] transition hover:-translate-y-0.5 hover:border-[#D4AF37] hover:bg-[#D4AF37]/20"
-                  aria-label="Open official FIDE profile"
-                >
-                  View FIDE Profile
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </div>
+              <a
+                href={FIDE_PROFILE_URL || undefined}
+                className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#E5C76B]"
+                aria-label="Open official FIDE profile"
+              >
+                View FIDE Profile
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>
