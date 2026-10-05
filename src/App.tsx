@@ -286,7 +286,6 @@ function App() {
 
         <section id="about" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="mb-8">
-            <span className="section-kicker">Profile</span>
             <h3 className="section-title">About Me</h3>
           </div>
 
@@ -346,7 +345,6 @@ function App() {
         <section id="fide-profile" className="bg-slate-900/50 py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <span className="section-kicker">FIDE Profile</span>
               <h3 className="section-title">My FIDE Profile</h3>
             </div>
 
@@ -395,7 +393,6 @@ function App() {
         <section id="tournaments" className="bg-slate-900/50 py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <span className="section-kicker">Tournament Experience</span>
               <h3 className="section-title">Tournament Experience</h3>
             </div>
 
@@ -437,9 +434,6 @@ function App() {
                           <div className="pl-4">
                             <div className="flex flex-wrap items-center justify-between gap-3">
                               <h5 className="text-lg font-semibold text-white">{event.name}</h5>
-                              <span className="rounded-full bg-[#D4AF37]/10 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-[#E5C76B]">
-                                {event.category}
-                              </span>
                             </div>
                             <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-300">
                               <span>{event.type}</span>
@@ -459,7 +453,6 @@ function App() {
 
         <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <span className="section-kicker">Featured Events</span>
             <h3 className="section-title">Featured Events</h3>
           </div>
 
@@ -488,7 +481,6 @@ function App() {
         <section id="credentials" className="bg-slate-900/50 py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <span className="section-kicker">Credentials & Qualifications</span>
               <h3 className="section-title">Credentials & Qualifications</h3>
             </div>
 
@@ -503,7 +495,6 @@ function App() {
 
         <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <span className="section-kicker">Education</span>
             <h3 className="section-title">Education</h3>
           </div>
 
@@ -555,7 +546,6 @@ function App() {
         <section className="bg-slate-900/50 py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <span className="section-kicker">Leadership & Activities</span>
               <h3 className="section-title">Leadership & Activities</h3>
             </div>
 
@@ -578,7 +568,6 @@ function App() {
 
         <section id="skills" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <span className="section-kicker">Professional Skills</span>
             <h3 className="section-title">Professional Skills</h3>
           </div>
 
@@ -661,7 +650,6 @@ function App() {
           <div className="rounded-[2rem] border border-[#D4AF37]/20 bg-[linear-gradient(135deg,_rgba(15,23,42,0.95),_rgba(17,24,39,0.9))] p-8 shadow-[0_20px_60px_rgba(15,23,42,0.8)] sm:p-10">
             <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
-                <span className="section-kicker">Connect</span>
                 <h3 className="section-title">Let’s Connect</h3>
                 <p className="mt-4 max-w-xl text-slate-300">
                   For chess tournament opportunities, professional collaboration, or other enquiries, feel free to get in touch.
