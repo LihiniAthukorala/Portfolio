@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import portraitImage from './assets/portrait.png';
 import cvPdf from './assets/Lihini Athukorala.pdf';
 import {
-  ArrowRight,
   ArrowUpRight,
   CalendarRange,
   Check,
@@ -39,28 +38,24 @@ const featuredEvents = [
     subtitle: 'Premier Division',
     year: 2026,
     category: 'Women’s',
-    description: 'A national premier-division event showcasing tournament administration and professional oversight.',
   },
   {
     name: 'National Youth Rapid & Blitz Chess Championship',
     subtitle: 'Youth Event',
     year: 2026,
     category: 'Youth',
-    description: 'A youth-focused rapid and blitz event with strong international-style tournament management.',
   },
   {
     name: 'Queenstar International Rating Chess Championship',
     subtitle: 'International Rating',
     year: 2026,
     category: 'International Rating',
-    description: 'An international-rated chess championship event conducted under professional competition standards.',
   },
   {
     name: 'Sri Lanka National Rapid & Blitz Chess Championship',
     subtitle: 'National Rapid & Blitz',
     year: 2025,
     category: 'National',
-    description: 'A national fast-format championship where organization, fairness, and clear decision-making are essential.',
   },
 ];
 
@@ -468,11 +463,6 @@ function App() {
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#E5C76B]">{event.category}</p>
                 <h4 className="mt-3 text-xl font-semibold text-white">{event.name}</h4>
                 <p className="mt-2 text-sm text-slate-300">{event.subtitle}</p>
-                <p className="mt-4 text-sm leading-6 text-slate-400">{event.description}</p>
-                <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#E5C76B]">
-                  Explore event
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </div>
               </article>
             ))}
           </div>
@@ -549,19 +539,23 @@ function App() {
               <h3 className="section-title">Leadership & Activities</h3>
             </div>
 
-            <div className="max-w-xl space-y-6 rounded-[1.8rem] border border-[#D4AF37]/20 bg-[linear-gradient(135deg,_rgba(15,23,42,0.95),_rgba(17,24,39,0.88))] p-6 shadow-[0_20px_50px_rgba(15,23,42,0.5)]">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#E5C76B]">Leadership</p>
-                <h4 className="mt-3 text-2xl font-semibold text-white">Senior Prefect</h4>
+            <div className="grid gap-x-12 sm:grid-cols-2">
+              <article className="border-t border-white/15 py-6">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B]">Leadership</p>
+                  <span className="text-sm tabular-nums text-slate-400">2019 – 2022</span>
+                </div>
+                <h4 className="mt-5 text-2xl font-semibold text-white">Senior Prefect</h4>
                 <p className="mt-2 text-slate-300">Holy Cross College, Gampaha</p>
-                <p className="mt-3 text-sm text-slate-400">2019 – 2022</p>
-              </div>
+              </article>
 
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#E5C76B]">Award</p>
-                <h4 className="mt-3 text-2xl font-semibold text-white">President Girl Guide</h4>
-                <p className="mt-3 text-sm text-slate-400">2022</p>
-              </div>
+              <article className="border-t border-white/15 py-6">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B]">Award</p>
+                  <span className="text-sm tabular-nums text-slate-400">2022</span>
+                </div>
+                <h4 className="mt-5 text-2xl font-semibold text-white">President Girl Guide</h4>
+              </article>
             </div>
           </div>
         </section>
@@ -571,10 +565,13 @@ function App() {
             <h3 className="section-title">Professional Skills</h3>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-              <h4 className="mb-6 text-xl font-semibold text-white">Chess & Professional Skills</h4>
-              <div className="flex flex-wrap gap-2">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div className="border-t border-[#D4AF37]/45 pt-5">
+              <div className="flex items-baseline justify-between gap-4">
+                <h4 className="text-lg font-semibold text-white">Chess & Professional Skills</h4>
+                <span className="shrink-0 text-xs tabular-nums text-slate-500">11 skills</span>
+              </div>
+              <ul className="mt-5 grid gap-x-6 sm:grid-cols-2">
                 {[
                   'Chess Tournament Officiating',
                   'Tournament Administration',
@@ -588,106 +585,79 @@ function App() {
                   'Leadership',
                   'Adaptability',
                 ].map((skill) => (
-                  <span key={skill} className="rounded-full border border-[#D4AF37]/25 bg-[#D4AF37]/10 px-3 py-2 text-sm text-[#E5C76B]">
+                  <li key={skill} className="flex min-h-12 items-center gap-3 border-b border-white/10 py-3 text-sm text-slate-200">
+                    <span className="h-1.5 w-1.5 shrink-0 bg-[#E5C76B]" aria-hidden="true" />
                     {skill}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-              <h4 className="mb-6 text-xl font-semibold text-white">IT & Digital Skills</h4>
-              <div className="space-y-6">
-                <div>
-                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-400">Programming</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['Java', 'Python', 'JavaScript', 'Kotlin', 'C#'].map((item) => (
-                      <span key={item} className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-200">
-                        {item}
-                      </span>
-                    ))}
+            <div className="border-t border-white/15 pt-5">
+              <div className="flex items-baseline justify-between gap-4">
+                <h4 className="text-lg font-semibold text-white">IT & Digital Skills</h4>
+                <span className="shrink-0 text-xs tabular-nums text-slate-500">4 disciplines</span>
+              </div>
+              <div className="mt-3 divide-y divide-white/10">
+                {[
+                  { category: 'Programming', items: ['Java', 'Python', 'JavaScript', 'Kotlin', 'C#'] },
+                  { category: 'Web', items: ['React.js', 'HTML', 'CSS', 'Bootstrap', 'Node.js', 'Express.js', 'Spring Boot', '.NET'] },
+                  { category: 'Databases', items: ['MongoDB', 'MySQL', 'SQL Server'] },
+                  { category: 'Tools', items: ['GitHub', 'VS Code', 'Android Studio', 'IntelliJ', 'Eclipse', 'Visual Studio', 'Figma', 'XAMPP', 'Swiss-Manager'] },
+                ].map((group) => (
+                  <div key={group.category} className="grid gap-3 py-4 sm:grid-cols-[7.5rem_1fr] sm:gap-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B] sm:pt-1">{group.category}</p>
+                    <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                      {group.items.map((item) => (
+                        <li key={item} className="border-b border-white/10 pb-0.5 text-sm text-slate-200">{item}</li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-
-                <div>
-                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-400">Web</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['React.js', 'HTML', 'CSS', 'Bootstrap', 'Node.js', 'Express.js', 'Spring Boot', '.NET'].map((item) => (
-                      <span key={item} className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-200">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-400">Databases</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['MongoDB', 'MySQL', 'SQL Server'].map((item) => (
-                      <span key={item} className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-200">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-400">Tools</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['GitHub', 'VS Code', 'Android Studio', 'IntelliJ', 'Eclipse', 'Visual Studio', 'Figma', 'XAMPP'].map((item) => (
-                      <span key={item} className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-200">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         <section id="contact" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="rounded-[2rem] border border-[#D4AF37]/20 bg-[linear-gradient(135deg,_rgba(15,23,42,0.95),_rgba(17,24,39,0.9))] p-8 shadow-[0_20px_60px_rgba(15,23,42,0.8)] sm:p-10">
-            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-              <div>
+          <div className="grid gap-10 border-t border-[#D4AF37]/30 pt-8 sm:pt-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+            <div className="flex flex-col items-start">
                 <h3 className="section-title">Let’s Connect</h3>
                 <p className="mt-4 max-w-xl text-slate-300">
                   For chess tournament opportunities, professional collaboration, or other enquiries, feel free to get in touch.
                 </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <span className="text-slate-300">Email</span>
-                  <a href="mailto:lihini0511@gmail.com" className="text-right font-medium text-white hover:text-[#E5C76B]">
-                    lihini0511@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <span className="text-slate-300">Location</span>
-                  <span className="text-right font-medium text-white">Gampaha, Sri Lanka</span>
-                </div>
-                <div className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <span className="text-slate-300">LinkedIn</span>
-                  <span className="text-right font-medium text-white">Lihini Athukorala</span>
-                </div>
-                <div className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <span className="text-slate-300">GitHub</span>
-                  <span className="text-right font-medium text-white">LihiniAthukorala</span>
-                </div>
-                <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                  <a href="mailto:lihini0511@gmail.com" className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#E5C76B]">
-                    Email Me
-                  </a>
-                  <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-[#D4AF37]/40 hover:text-[#E5C76B]">
-                    LinkedIn
-                  </a>
-                  <a href="https://github.com/LihiniAthukorala" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-[#D4AF37]/40 hover:text-[#E5C76B]">
-                    GitHub
-                  </a>
-                </div>
-              </div>
+              <a href="mailto:lihini0511@gmail.com" className="mt-7 inline-flex items-center gap-2 bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#E5C76B]">
+                Email Me
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
             </div>
+
+            <dl className="grid gap-x-10 sm:grid-cols-2">
+              <div className="border-t border-white/10 py-5">
+                <dt className="text-xs uppercase tracking-[0.16em] text-slate-400">Email</dt>
+                <dd className="mt-2 break-all text-base font-medium text-white">
+                  <a href="mailto:lihini0511@gmail.com" className="transition hover:text-[#E5C76B]">lihini0511@gmail.com</a>
+                </dd>
+              </div>
+              <div className="border-t border-white/10 py-5">
+                <dt className="text-xs uppercase tracking-[0.16em] text-slate-400">Phone</dt>
+                <dd className="mt-2 text-base font-medium text-white">
+                  <a href="tel:+94713873172" className="transition hover:text-[#E5C76B]">071 387 3172</a>
+                </dd>
+              </div>
+              <div className="border-t border-white/10 py-5">
+                <dt className="text-xs uppercase tracking-[0.16em] text-slate-400">Location</dt>
+                <dd className="mt-2 text-base font-medium text-white">Gampaha, Sri Lanka</dd>
+              </div>
+              <div className="border-t border-white/10 py-5">
+                <dt className="text-xs uppercase tracking-[0.16em] text-slate-400">LinkedIn</dt>
+                <dd className="mt-2 text-base font-medium text-white">
+                  <a href="https://www.linkedin.com/in/lihini-athukorala-759803347" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 transition hover:text-[#E5C76B]">
+                    Lihini Athukorala <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </dd>
+              </div>
+            </dl>
           </div>
         </section>
       </main>
