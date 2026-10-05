@@ -565,7 +565,31 @@ function App() {
             <h3 className="section-title">Professional Skills</h3>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div className="space-y-12">
+            <div className="border-t border-white/15 pt-5">
+              <div className="flex items-baseline justify-between gap-4">
+                <h4 className="text-lg font-semibold text-white">IT & Digital Skills</h4>
+                <span className="shrink-0 text-xs tabular-nums text-slate-500">4 disciplines</span>
+              </div>
+              <div className="mt-3 divide-y divide-white/10">
+                {[
+                  { category: 'Programming', items: ['Java', 'Python', 'JavaScript', 'Kotlin', 'C#'] },
+                  { category: 'Web', items: ['React.js', 'HTML', 'CSS', 'Bootstrap', 'Node.js', 'Express.js', 'Spring Boot', '.NET'] },
+                  { category: 'Databases', items: ['MongoDB', 'MySQL', 'SQL Server'] },
+                  { category: 'Tools', items: ['GitHub', 'VS Code', 'Android Studio', 'IntelliJ', 'Eclipse', 'Visual Studio', 'Figma', 'XAMPP', 'Swiss-Manager'] },
+                ].map((group) => (
+                  <div key={group.category} className="grid gap-3 py-4 sm:grid-cols-[7.5rem_1fr] sm:gap-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B] sm:pt-1">{group.category}</p>
+                    <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                      {group.items.map((item) => (
+                        <li key={item} className="border-b border-white/10 pb-0.5 text-sm text-slate-200">{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="border-t border-[#D4AF37]/45 pt-5">
               <div className="flex items-baseline justify-between gap-4">
                 <h4 className="text-lg font-semibold text-white">Chess & Professional Skills</h4>
@@ -591,30 +615,6 @@ function App() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="border-t border-white/15 pt-5">
-              <div className="flex items-baseline justify-between gap-4">
-                <h4 className="text-lg font-semibold text-white">IT & Digital Skills</h4>
-                <span className="shrink-0 text-xs tabular-nums text-slate-500">4 disciplines</span>
-              </div>
-              <div className="mt-3 divide-y divide-white/10">
-                {[
-                  { category: 'Programming', items: ['Java', 'Python', 'JavaScript', 'Kotlin', 'C#'] },
-                  { category: 'Web', items: ['React.js', 'HTML', 'CSS', 'Bootstrap', 'Node.js', 'Express.js', 'Spring Boot', '.NET'] },
-                  { category: 'Databases', items: ['MongoDB', 'MySQL', 'SQL Server'] },
-                  { category: 'Tools', items: ['GitHub', 'VS Code', 'Android Studio', 'IntelliJ', 'Eclipse', 'Visual Studio', 'Figma', 'XAMPP', 'Swiss-Manager'] },
-                ].map((group) => (
-                  <div key={group.category} className="grid gap-3 py-4 sm:grid-cols-[7.5rem_1fr] sm:gap-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E5C76B] sm:pt-1">{group.category}</p>
-                    <ul className="flex flex-wrap gap-x-5 gap-y-2">
-                      {group.items.map((item) => (
-                        <li key={item} className="border-b border-white/10 pb-0.5 text-sm text-slate-200">{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
